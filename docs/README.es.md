@@ -2,13 +2,19 @@
 
 [English](../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [Español](README.es.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [فارسی](README.fa.md)
 
-**[⬇ Descargar APK de vista previa para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**¿Tienes un VPS? Monta tu propia VPN privada.**
 
-OwnBridge es una aplicación experimental para Android que despliega nodos proxy autogestionados en un VPS Ubuntu bajo tu control. No es un proveedor de VPN ni ofrece servidores o cuentas.
+OwnBridge es una herramienta de despliegue local para Android. Solo necesitas un VPS Ubuntu con una dirección IPv4 pública: introduce los datos de acceso, elige el protocolo y toca «Iniciar despliegue». OwnBridge se encarga de configurar el servidor, comprobar los nodos y generar la configuración.
+
+Al terminar, puedes solicitar una URL de suscripción para **Clash/Mihomo** y obtener enlaces de nodos listos para importar en **v2rayN/v2rayNG**. Sin comandos en el servidor ni archivos de configuración escritos a mano.
+
+**Tu servidor. Tus nodos. Del despliegue a la entrega en unos pocos toques.**
+
+**[⬇ Descargar APK de vista previa para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
 
 ## Estado actual
 
-Esta es una vista previa temprana, no un servicio listo para producción. El APK de vista previa, que no permite depuración, admite el despliegue combinado de SS, VLESS Reality e Hysteria 2; la versión estable todavía restringe más las operaciones de despliegue. No se han validado todas las combinaciones de VPS, red y cliente. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
+Esta es una vista previa temprana, no un servicio listo para producción. OwnBridge no es un proveedor de VPN ni ofrece servidores o cuentas. El APK de vista previa, que no permite depuración, admite el despliegue combinado de SS, VLESS Reality e Hysteria 2; la versión estable todavía restringe más las operaciones de despliegue. No se han validado todas las combinaciones de VPS, red y cliente. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
 
 ## Funciones
 

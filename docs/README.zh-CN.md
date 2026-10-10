@@ -2,13 +2,19 @@
 
 [English](../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [Español](README.es.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [فارسی](README.fa.md)
 
-**[⬇ 下载 Android 预览版 APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**有一台 VPS，就能搭起自己的私人 VPN。**
 
-OwnBridge 是一款实验性的 Android 应用，可在你自己管理的 Ubuntu VPS 上部署代理节点。它不是 VPN 服务商，不提供服务器或账户。
+OwnBridge 是一款在 Android 手机上使用的本地部署工具。准备一台有公网 IPv4 地址的 Ubuntu VPS，填入登录信息、选好协议，点一下「开始部署」；服务器安装、节点检查和配置生成，交给 OwnBridge。
+
+完成后，你可以索取 **Clash/Mihomo 订阅地址**，也能拿到 **v2rayN/v2rayNG 可导入的节点链接**。不用敲服务器命令，不用手写配置文件。
+
+**你的服务器，你的节点。手机上几步，部署到交付。**
+
+**[⬇ 下载 Android 预览版 APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
 
 ## 当前状态
 
-这是早期预览版，不是可直接用于生产环境的服务。非调试 APK 开放了 SS、VLESS Reality 和 Hysteria 2 的组合部署流程；稳定正式版的可写部署范围仍较窄。不同 VPS、网络和客户端组合尚未全部验证。APK 作为 GitHub Release 附件提供，不提交到源码仓库。
+这是早期预览版，不是可直接用于生产环境的服务。OwnBridge 不是 VPN 服务商，不提供服务器或账户。非调试 APK 开放了 SS、VLESS Reality 和 Hysteria 2 的组合部署流程；稳定正式版的可写部署范围仍较窄。不同 VPS、网络和客户端组合尚未全部验证。APK 作为 GitHub Release 附件提供，不提交到源码仓库。
 
 ## 功能
 

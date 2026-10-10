@@ -2,13 +2,19 @@
 
 [English](README.md) · [简体中文](docs/README.zh-CN.md) · [繁體中文](docs/README.zh-TW.md) · [Español](docs/README.es.md) · [Русский](docs/README.ru.md) · [Türkçe](docs/README.tr.md) · [فارسی](docs/README.fa.md)
 
-**[⬇ Download Android preview APK (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**Have a VPS? Build your own private VPN.**
 
-OwnBridge is an experimental Android app that deploys self-hosted proxy nodes on an Ubuntu VPS you control. It is not a VPN provider and does not supply servers or accounts.
+OwnBridge is a local deployment tool for Android. Bring an Ubuntu VPS with a public IPv4 address, enter its login details, choose a protocol, and tap to start deployment. OwnBridge handles server setup, node checks, and configuration generation.
+
+Once complete, you can request a Clash/Mihomo subscription URL and get node links ready to import into v2rayN/v2rayNG. No server commands to type. No configuration files to write by hand.
+
+**Your server. Your nodes. From setup to delivery in just a few taps.**
+
+**[⬇ Download Android preview APK (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
 
 ## Current status
 
-This is an early preview, not a production-ready service. The non-debuggable preview APK exposes the composite SS, VLESS Reality, and Hysteria 2 deployment path; the stable release build still has a narrower writable gate. Do not assume every combination of VPS, network, and client has been validated. The APK is a GitHub Release asset, not a file committed to this repository.
+This is an early preview, not a production-ready service. OwnBridge is not a VPN provider and does not supply servers or accounts. The non-debuggable preview APK exposes the composite SS, VLESS Reality, and Hysteria 2 deployment path; the stable release build still has a narrower writable gate. Do not assume every combination of VPS, network, and client has been validated. The APK is a GitHub Release asset, not a file committed to this repository.
 
 ## What it does
 

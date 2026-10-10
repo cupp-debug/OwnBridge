@@ -2,13 +2,19 @@
 
 [English](../README.md) · [简体中文](README.zh-CN.md) · [繁體中文](README.zh-TW.md) · [Español](README.es.md) · [Русский](README.ru.md) · [Türkçe](README.tr.md) · [فارسی](README.fa.md)
 
-**[⬇ Android önizleme APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**Bir VPS'iniz mi var? Kendi özel VPN'inizi kurun.**
 
-OwnBridge, kontrol ettiğiniz bir Ubuntu VPS üzerinde kendi proxy düğümlerinizi kuran deneysel bir Android uygulamasıdır. Bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz.
+OwnBridge, Android için yerel bir kurulum aracıdır. Genel IPv4 adresi olan bir Ubuntu VPS hazırlayın, giriş bilgilerini girin, protokolü seçin ve «Kurulumu başlat»a dokunun. Sunucu kurulumu, düğüm kontrolleri ve yapılandırma oluşturma işlerini OwnBridge halleder.
+
+İşlem tamamlandığında **Clash/Mihomo** abonelik bağlantısı isteyebilir, **v2rayN/v2rayNG**'ye aktarılabilir düğüm bağlantılarını alabilirsiniz. Sunucuda komut çalıştırmanız veya yapılandırma dosyalarını elle yazmanız gerekmez.
+
+**Kendi sunucunuz. Kendi düğümleriniz. Birkaç dokunuşla kurulumdan teslimata.**
+
+**[⬇ Android önizleme APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
 
 ## Mevcut durum
 
-Bu, üretim kullanımına hazır bir hizmet değil, erken aşama bir önizleme sürümüdür. Hata ayıklama özelliği kapalı önizleme APK'sı SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasına izin verir; kararlı sürümün kurulum yeteneği şimdilik daha sınırlıdır. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
+Bu, üretim kullanımına hazır bir hizmet değil, erken aşama bir önizleme sürümüdür. OwnBridge bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz. Hata ayıklama özelliği kapalı önizleme APK'sı SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasına izin verir; kararlı sürümün kurulum yeteneği şimdilik daha sınırlıdır. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
 
 ## Özellikler
 
