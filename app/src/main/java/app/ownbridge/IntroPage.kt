@@ -43,7 +43,6 @@ internal fun IntroPage() {
             R.string.intro_addresses,
             R.string.intro_requirements,
             R.string.intro_aftercare,
-            R.string.intro_recommendations,
         ).forEach { paragraph ->
             IntroParagraph(paragraph)
         }

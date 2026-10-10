@@ -130,7 +130,6 @@
     <string name="intro_addresses">购买 VPS 时，请优先确保服务器拥有一个可用的公网 IPv4 地址。如果服务商同时提供 IPv6，也建议保留。在你的本地网络和客户端均具备 IPv6 连接能力的情况下，IPv6 可以作为额外的连接入口，并在部分 IPv4 无法正常连接的情况下提供备用方案。</string>
     <string name="intro_requirements">开始部署前，请确保服务器运行当前版本支持的 Ubuntu 系统，具体版本会在方案页校验。对于少量设备自用的私人 VPN，通常 1 vCPU、512 MB 内存即可满足基础需求；如果计划同时运行多个协议、管理面板或其他服务，建议选择 1 GB 或以上内存。</string>
     <string name="intro_aftercare">为了减少现有软件、端口和系统配置造成的环境冲突，建议使用一台全新的 VPS 作为部署目标。部署完成后，请及时修改服务器 root 密码，并妥善保存登录凭据；如条件允许，也建议配置 SSH 密钥登录，并关闭不必要的远程登录方式。</string>
-    <string name="intro_recommendations">如果你还没有购买 VPS，可以前往“服务器推荐”页面，查看适合 OwnBridge 部署的服务器配置和服务商建议。</string>
     <string name="vps_address">VPS 地址</string>
     <string name="vps_address_example">例如 8.8.8.8</string>
     <string name="ssh_username">SSH 用户名</string>
