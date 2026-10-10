@@ -1,0 +1,7 @@
+OwnBridge deployment bundle ss-v1-ubuntu24
+Supported host: Ubuntu 24.04 or 26.04 x86_64, root SSH
+Protocol: Shadowsocks aes-256-gcm, one selected IPv4 address
+Client export: Clash / Mihomo
+sing-box: v1.14.2 linux-amd64
+sing-box SHA-256: a684484d7477d1437282ee411f4d131d0340aaad60a7868841ebd5d87dd8a0c6
+Steps: preflight, fetch, configure, activate, verify

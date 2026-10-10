@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <!-- Adapted from MetaCubeXD's MIT-licensed favicon.svg. -->
+    <path android:fillColor="#FFDadedf" android:pathData="M0,0h200v200h-200z" />
+    <path android:fillColor="#FF080808"
+        android:pathData="M100,29 L161,64 L100,99 L39,64 Z" />
+    <path android:fillColor="#FF474747"
+        android:pathData="M37,69 L98,104 L98,168 L37,135 Z" />
+    <path android:fillColor="#FF080808"
+        android:pathData="M102,104 L163,69 L163,135 L102,168 Z" />
+</vector>

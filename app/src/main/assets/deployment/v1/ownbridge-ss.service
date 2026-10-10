@@ -1,0 +1,19 @@
+[Unit]
+Description=OwnBridge Shadowsocks service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ownbridge
+Group=ownbridge
+ExecStart=/opt/ownbridge/bin/sing-box-1.14.2 run -c /etc/ownbridge/ss-@RUN_ID@.json
+Environment=OWNBRIDGE_RUN_DIR=@RUN_DIR@
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

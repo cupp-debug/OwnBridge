@@ -1,0 +1,5 @@
+ownbridge-package-v2-ubuntu22
+plan-schema=ownbridge-plan-v2
+sing-box=1.14.2
+modules=ss,vless,hy2
+status=debug-only-os-supported

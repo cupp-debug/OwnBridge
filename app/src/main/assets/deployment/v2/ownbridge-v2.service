@@ -1,0 +1,22 @@
+# OwnBridge run: @RUN_ID@
+[Unit]
+Description=OwnBridge @PROTOCOL@ proxy service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ownbridge
+Group=ownbridge
+ExecStart=/opt/ownbridge/bin/sing-box-1.14.2 run -c /etc/ownbridge/v2-@PROTOCOL@-@RUN_ID@.json
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+
+[Install]
+WantedBy=multi-user.target
