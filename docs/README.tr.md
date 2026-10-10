@@ -10,11 +10,11 @@ OwnBridge, Android için yerel bir kurulum aracıdır. Genel IPv4 adresi olan bi
 
 **Kendi sunucunuz. Kendi düğümleriniz. Birkaç dokunuşla kurulumdan teslimata.**
 
-**[⬇ Android önizleme APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**[⬇ Android APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
 
 ## Mevcut durum
 
-Bu, üretim kullanımına hazır bir hizmet değil, erken aşama bir önizleme sürümüdür. OwnBridge bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz. Hata ayıklama özelliği kapalı önizleme APK'sı SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasına izin verir; kararlı sürümün kurulum yeteneği şimdilik daha sınırlıdır. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
+v0.1.0, Android uygulamasının ilk önizleme dışı sürümüdür. OwnBridge bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz. Hata ayıklama özelliği kapalı APK, SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasını destekler. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır; sorunları GitHub Issues üzerinden bildirebilirsiniz. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
 
 ## Özellikler
 
@@ -30,7 +30,7 @@ Bu, üretim kullanımına hazır bir hizmet değil, erken aşama bir önizleme s
 - Yönetme yetkiniz olan, root SSH erişimli Ubuntu 22.04, 24.04 veya 26.04 x86_64 VPS. Desteklenen birleşimler mevcut sürümün özellik sınırlarına bağlıdır.
 - Derleme için JDK 21 ve Android SDK API 36.
 
-Yerel geliştirme için Windows'ta `./gradlew.bat :app:assembleDebug`, macOS veya Linux'ta `./gradlew :app:assembleDebug` çalıştırın. Genel önizleme APK'sı ayrıca, hata ayıklama kapalı olarak derlenir ve yayın anahtarıyla imzalanır; [derleme ve imzalama kılavuzuna](BUILDING.md) bakın. Derleme, sürümü sabitlenmiş Mihomo Android köprüsünü indirir ve SHA-256 özetini doğrular. VPS kurulumu, sing-box'ın sabitlenmiş sürümünü kaynak projeden indirip özetini doğrular.
+Yerel geliştirme için Windows'ta `./gradlew.bat :app:assembleDebug`, macOS veya Linux'ta `./gradlew :app:assembleDebug` çalıştırın. Genel APK ayrıca hata ayıklama kapalı olarak derlenir ve yayın anahtarıyla imzalanır; [derleme ve imzalama kılavuzuna](BUILDING.md) bakın. Derleme, sürümü sabitlenmiş Mihomo Android köprüsünü indirir ve SHA-256 özetini doğrular. VPS kurulumu, sing-box'ın sabitlenmiş sürümünü kaynak projeden indirip özetini doğrular.
 
 ## Güvenlik
 

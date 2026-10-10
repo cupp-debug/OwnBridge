@@ -9,20 +9,19 @@ SHA-256 `41ddcce67de37f406377798c5adbc7ff925e6cd9cadbef3f187da3a03e564176`.
 The wrapper source revision for this tag is `d8cbe8c42acbe5c35e6b31ced324f0f928322fc2`.
 It is used only for local per-node request tests; OwnBridge does not call its TUN API.
 The public source tag, [build instructions](docs/BUILDING.md), pinned upstream
-source references, and bundled GPL-3.0 license text accompany any preview APK.
+source references, and bundled GPL-3.0 license text accompany the public APK.
 This project is not affiliated with MetaCubeX or the wrapper maintainer.
 
 ## sing-box server executable
 
-The experimental SS deployment downloads an unmodified, version-pinned
+OwnBridge deployment downloads an unmodified, version-pinned
 [sing-box release](https://github.com/SagerNet/sing-box/releases) directly from
 the upstream project onto the user's VPS and checks its published SHA-256
 digest. The executable is not bundled into the OwnBridge APK or copied into
 this repository. sing-box is published under
 [GPL-3.0-or-later](https://github.com/SagerNet/sing-box/blob/testing/LICENSE);
-OwnBridge is not affiliated with or endorsed by SagerNet. Release packaging
-and the installed license notice require a separate review before public
-distribution.
+OwnBridge is not affiliated with or endorsed by SagerNet. Consult the linked
+upstream license for the executable installed on a VPS.
 
 ## Icons
 
@@ -39,4 +38,4 @@ All `ob_*.xml` icons except `ob_github.xml` and `ob_mihomo.xml` came from [Googl
 
 ## Bootstrap Icons GitHub glyph
 
-`ob_github.xml` is the [Bootstrap Icons GitHub glyph](https://icons.getbootstrap.com/icons/github/), licensed under [MIT](third_party_licenses/Bootstrap-Icons-MIT.txt). It is registered for a future link to the project's GitHub page, not used as OwnBridge branding. GitHub's [logo usage rules](https://brand.github.com/foundations/logo) are separate from the icon library's copyright license; using this asset must not imply GitHub sponsorship or affiliation.
+`ob_github.xml` is the [Bootstrap Icons GitHub glyph](https://icons.getbootstrap.com/icons/github/), licensed under [MIT](third_party_licenses/Bootstrap-Icons-MIT.txt). It identifies links to OwnBridge's repository and other GitHub pages, not OwnBridge branding. GitHub's [logo usage rules](https://brand.github.com/foundations/logo) are separate from the icon library's copyright license; using this asset must not imply GitHub sponsorship or affiliation.

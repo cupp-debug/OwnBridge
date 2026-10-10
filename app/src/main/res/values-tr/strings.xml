@@ -82,7 +82,7 @@
     <string name="settings_about_data_title">Bu cihazdaki veriler</string>
     <string name="settings_about_data">Uygulama SSH parolanızı hiçbir zaman kaydetmez. Başarılı dağıtım sonuçları otomatik olarak şifreli yerel geçmişe eklenir; yapılandırma dosyasını kendiniz de dışa aktarabilirsiniz.</string>
     <string name="settings_about_open_source_title">Açık kaynak ve katkılar</string>
-    <string name="settings_about_open_source">Bu bir geliştirme önizlemesidir. Herkese açık OwnBridge kaynak deposu ve yayın lisansı henüz mevcut değildir.</string>
+    <string name="settings_about_open_source">OwnBridge kaynak kodu GPL-3.0-only lisansı ile yayımlanır. Kodu incelemek veya sorun bildirmek için aşağıdaki depoyu açın.</string>
     <string name="settings_about_third_party">OwnBridge aşağıdaki bağımsız projeleri kullanır. Kaynak sayfasını ziyaret etmek için adına dokunun; burada listelenmesi destek verildiği anlamına gelmez.</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · yerel düğüm testleri</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · Android köprüsü</string>
@@ -251,7 +251,7 @@
     <string name="plan_composite_client_only">Bu derleme Clash / Mihomo ve v2rayN / v2rayNG dışa aktarımlarını destekler.</string>
     <string name="plan_composite_protocol_unsupported">Seçilen protokollerden biri bu pakette mevcut değil.</string>
     <string name="plan_ipv6_not_ready">IPv6 dağıtımı bir sonraki test aşamasıdır. Şimdilik bir IPv4 adresi seçin.</string>
-    <string name="plan_address_limit_not_ready">Bu hata ayıklama aşaması en fazla bir IPv4 ve bir IPv6 adresini destekler. Ek adresler henüz doğrulanmadı.</string>
+    <string name="plan_address_limit_not_ready">Bu sürüm, her kurulumda en fazla bir IPv4 ve bir IPv6 adresini destekler. Ek adresler henüz desteklenmiyor.</string>
     <string name="plan_new_task_title">Yeni görev başlatılsın mı?</string>
     <string name="plan_new_task_warning">Onaydan sonra eski yerel görev artık devam ettirilemez. VPS üzerindeki mevcut düğümler ve günlükler silinmez. Eski görev başarıyla tamamlanmadıysa arşivlenmemiş yapılandırma ve günlükler geri alınamayabilir. Yeni görev adres, protokol ve bağlantı noktası çakışmalarını yine denetler.</string>
     <string name="plan_start_failed">Yeni görev başlatılamadı. Lütfen yeniden deneyin. Eski görev kaydı temizlenmedi.</string>
@@ -262,7 +262,7 @@
     <string name="plan_port">TCP/UDP bağlantı noktası</string>
     <string name="plan_write_warning">Onaylandığında doğrulanmış bir betik paketi yüklenecek, sing-box 1.14.2 kurulacak ve seçilen proxy bağlantı noktası açılacaktır. Dağıtımdan sonra OwnBridge, Clash abonelik bağlantısı için başka bir uygun bağlantı noktası açacaktır. SSH ve diğer hizmetler değiştirilmez.</string>
     <string name="plan_resume_warning">OwnBridge kaydedilmiş çalıştırma ID’sini, paket özetini ve uzak adım günlüğünü yeniden denetler. Tamamlanan adımlar tekrarlanmaz; durumu belirsiz adımlar aynı kimlik bilgileri kullanılarak denetlenir veya yeniden denenir.</string>
-    <string name="plan_composite_write_warning">Deneysel test derlemesi: onaylandığında doğrulanmış paket yüklenir, sing-box 1.14.2 kurulur ve seçilen her protokol için bir hizmet oluşturulur. Dağıtımdan sonra OwnBridge, Clash abonelik bağlantısı için başka bir uygun bağlantı noktası açar. Mevcut hizmetler değiştirilmez.</string>
+    <string name="plan_composite_write_warning">Onaylandığında doğrulanmış paket yüklenir, sing-box 1.14.2 kurulur ve seçilen her protokol için bir hizmet oluşturulur. Dağıtımdan sonra OwnBridge, Clash abonelik bağlantısı için başka bir uygun bağlantı noktası açar. Mevcut hizmetler değiştirilmez.</string>
     <string name="plan_composite_resume_warning">OwnBridge önce uzak günlüğü denetler. Tamamlanmış görev yalnızca okunur; tamamlanmamış görev yalnızca kendi özgün paket sürümüyle yeniden denenebilir. Daha yeni bir paket eskisinin üzerine asla yazmaz.</string>
     <string name="plan_confirmation_title">Planı onayla</string>
     <string name="plan_resume_title">Kaydedilmiş dağıtımı sürdür</string>

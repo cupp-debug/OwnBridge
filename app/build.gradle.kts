@@ -18,7 +18,7 @@ android {
         applicationId = "app.ownbridge"
         minSdk = 26
         targetSdk = 36
-        versionCode = 1
+        versionCode = 2
         versionName = "0.1.0"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -31,13 +31,8 @@ android {
             buildConfigField("boolean", "COMPOSITE_DEPLOYMENT_ENABLED", "true")
         }
         release {
-            isMinifyEnabled = false
-            buildConfigField("boolean", "COMPOSITE_DEPLOYMENT_ENABLED", "false")
-        }
-        create("preview") {
             isDebuggable = false
             isMinifyEnabled = false
-            versionNameSuffix = "-preview.1"
             buildConfigField("boolean", "COMPOSITE_DEPLOYMENT_ENABLED", "true")
         }
     }

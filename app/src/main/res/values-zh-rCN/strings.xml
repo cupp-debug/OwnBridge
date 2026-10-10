@@ -81,7 +81,7 @@
     <string name="settings_about_data_title">本机数据</string>
     <string name="settings_about_data">应用不保存 SSH 密码。部署成功后，结果会自动加密存入本机历史；你也可以自行导出配置文件。</string>
     <string name="settings_about_open_source_title">开源与致谢</string>
-    <string name="settings_about_open_source">当前是开发预览版；OwnBridge 的公开源码仓库与发布许可尚未确定。</string>
+    <string name="settings_about_open_source">OwnBridge 源码以 GPL-3.0-only 许可公开。点击下方仓库地址可查看代码或提交问题。</string>
     <string name="settings_about_third_party">OwnBridge 使用以下独立项目。点击名称可打开上游页面；列出它们不代表获得官方背书。</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · 本地节点测试</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · Android 桥接</string>
@@ -250,7 +250,7 @@
     <string name="plan_composite_client_only">当前支持 Clash / Mihomo 和 v2rayN / v2rayNG 导出。</string>
     <string name="plan_composite_protocol_unsupported">所选协议有尚未包含在此步骤包中的项目。</string>
     <string name="plan_ipv6_not_ready">IPv6 部署属于下一阶段验收；目前请先选择 IPv4 地址。</string>
-    <string name="plan_address_limit_not_ready">当前调试版最多支持一枚 IPv4 和一枚 IPv6；更多地址尚未验证。</string>
+    <string name="plan_address_limit_not_ready">当前版本每次部署最多支持一枚 IPv4 和一枚 IPv6；暂不支持更多地址。</string>
     <string name="plan_new_task_title">开始新任务？</string>
     <string name="plan_new_task_warning">确认后，本机旧任务将退出续跑入口；VPS 上已有节点和日志不会删除。若旧任务尚未成功，未归档的配置与日志可能无法找回。新任务仍会检查地址、协议和端口冲突。</string>
     <string name="plan_start_failed">无法启动新任务，请重试。旧任务记录未被清除。</string>
@@ -261,7 +261,7 @@
     <string name="plan_port">TCP/UDP 端口</string>
     <string name="plan_write_warning">确认后将上传并校验步骤包、安装 sing-box 1.14.2，并开放所选代理端口。部署完成后，会另开一个可用端口提供 Clash 订阅链接。不会改动 SSH 和其他服务。</string>
     <string name="plan_resume_warning">OwnBridge 将核对已保存的任务 ID、步骤包摘要和远端步骤记录。已完成的步骤不重复执行；状态不明的步骤会在同一凭据下核查或重试。</string>
-    <string name="plan_composite_write_warning">实验性测试版：确认后将上传并校验步骤包、安装 sing-box 1.14.2，并为所选协议创建服务。部署完成后，会另开一个可用端口提供 Clash 订阅链接。现有服务不变。</string>
+    <string name="plan_composite_write_warning">确认后将上传并校验步骤包、安装 sing-box 1.14.2，并为所选协议创建服务。部署完成后，会另开一个可用端口提供 Clash 订阅链接。现有服务不变。</string>
     <string name="plan_composite_resume_warning">OwnBridge 会先核对远端步骤记录。已完成任务只读恢复；未完成任务仅能用原版本步骤包重试，新版不会覆盖旧包。</string>
     <string name="plan_confirmation_title">确认方案</string>
     <string name="plan_resume_title">恢复已保存的部署任务</string>

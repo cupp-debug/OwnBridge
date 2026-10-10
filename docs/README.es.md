@@ -10,11 +10,11 @@ Al terminar, puedes solicitar una URL de suscripción para **Clash/Mihomo** y ob
 
 **Tu servidor. Tus nodos. Del despliegue a la entrega en unos pocos toques.**
 
-**[⬇ Descargar APK de vista previa para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**[⬇ Descargar APK para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
 
 ## Estado actual
 
-Esta es una vista previa temprana, no un servicio listo para producción. OwnBridge no es un proveedor de VPN ni ofrece servidores o cuentas. El APK de vista previa, que no permite depuración, admite el despliegue combinado de SS, VLESS Reality e Hysteria 2; la versión estable todavía restringe más las operaciones de despliegue. No se han validado todas las combinaciones de VPS, red y cliente. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
+v0.1.0 es la primera versión de Android que no es preliminar. OwnBridge no es un proveedor de VPN ni ofrece servidores o cuentas. El APK sin depuración admite el despliegue combinado de SS, VLESS Reality e Hysteria 2. No se han validado todas las combinaciones de VPS, red y cliente; puedes informar de problemas en GitHub Issues. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
 
 ## Funciones
 
@@ -30,7 +30,7 @@ Esta es una vista previa temprana, no un servicio listo para producción. OwnBri
 - Un VPS Ubuntu 22.04, 24.04 o 26.04 x86_64 que estés autorizado a administrar y al que puedas acceder mediante SSH como root. Las combinaciones admitidas dependen de las restricciones de la versión actual.
 - JDK 21 y Android SDK API 36 para compilar.
 
-Para desarrollo local, ejecuta `./gradlew.bat :app:assembleDebug` en Windows o `./gradlew :app:assembleDebug` en macOS/Linux. El APK público de vista previa se compila aparte sin depuración y se firma con una clave de publicación; consulta la [guía de compilación y firma](BUILDING.md). La compilación descarga un puente Android de Mihomo de versión fija y comprueba su SHA-256. El despliegue en el VPS descarga una versión fija de sing-box del proyecto original y verifica su resumen criptográfico.
+Para desarrollo local, ejecuta `./gradlew.bat :app:assembleDebug` en Windows o `./gradlew :app:assembleDebug` en macOS/Linux. El APK público se compila aparte sin depuración y se firma con una clave de publicación; consulta la [guía de compilación y firma](BUILDING.md). La compilación descarga un puente Android de Mihomo de versión fija y comprueba su SHA-256. El despliegue en el VPS descarga una versión fija de sing-box del proyecto original y verifica su resumen criptográfico.
 
 ## Seguridad
 

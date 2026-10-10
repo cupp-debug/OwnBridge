@@ -1,6 +1,6 @@
 # Building OwnBridge
 
-This repository contains the Android app, the plain Kotlin/JVM `core` module, the deployment scripts packaged into the app, tests, and third-party notices. The public preview APK is built from a tagged source commit; APKs are release assets and are not committed to Git.
+This repository contains the Android app, the plain Kotlin/JVM `core` module, the deployment scripts packaged into the app, tests, and third-party notices. Public APKs are built from tagged source commits, published as GitHub Release assets, and not committed to Git.
 
 ## Prerequisites
 
@@ -11,12 +11,12 @@ This repository contains the Android app, the plain Kotlin/JVM `core` module, th
 Set `JAVA_HOME` to JDK 21 and `ANDROID_HOME` to the Android SDK. Use the included Gradle wrapper:
 
 ```sh
-./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug :app:assemblePreview
+./gradlew :core:test :app:testDebugUnitTest :app:assembleDebug :app:assembleRelease
 ```
 
-On Windows, use `gradlew.bat` in place of `./gradlew`. The debug APK is signed with a local Android debug key, has application ID `app.ownbridge.dev`, and must not be redistributed as the public release. The `preview` build has application ID `app.ownbridge`, enables the tested composite deployment path, and is **not debuggable**. It is unsigned by default. Its output is under `app/build/outputs/apk/preview/` and must be signed with a private release key before installation or distribution. Do not commit a keystore or its password.
+On Windows, use `gradlew.bat` in place of `./gradlew`. The debug APK is signed with a local Android debug key, has application ID `app.ownbridge.dev`, and must not be redistributed as the public release. The `release` build has application ID `app.ownbridge`, enables the tested composite deployment path, and is **not debuggable**. It is unsigned by default. Its output is under `app/build/outputs/apk/release/` and must be signed with a private release key before installation or distribution. Do not commit a keystore or its password.
 
-For a self-signed preview, first align the unsigned APK with Android SDK `zipalign`, then sign it with `apksigner` and verify it with `apksigner verify --verbose --print-certs`. Keep the signing key and password securely: future updates of the same Android application ID must use the same key.
+For a self-signed release, first align the unsigned APK with Android SDK `zipalign`, then sign it with `apksigner` and verify it with `apksigner verify --verbose --print-certs`. Keep the signing key and password securely: future updates of the same Android application ID must use the same key and a higher `versionCode`.
 
 ## Pinned components and corresponding source
 

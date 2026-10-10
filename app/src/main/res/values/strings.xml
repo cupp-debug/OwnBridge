@@ -81,7 +81,7 @@
     <string name="settings_about_data_title">Data on this device</string>
     <string name="settings_about_data">The app never saves your SSH password. Successful deployment results enter encrypted local history automatically; you can also export the configuration file yourself.</string>
     <string name="settings_about_open_source_title">Open source and credits</string>
-    <string name="settings_about_open_source">This is a development preview. A public OwnBridge source repository and release license are not available yet.</string>
+    <string name="settings_about_open_source">OwnBridge source code is published under GPL-3.0-only. Open the repository below to inspect the code or report an issue.</string>
     <string name="settings_about_third_party">OwnBridge uses the following independent projects. Tap a name to visit its upstream page; listing them does not imply endorsement.</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · local node tests</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · Android bridge</string>
@@ -250,7 +250,7 @@
     <string name="plan_composite_client_only">This build supports Clash / Mihomo and v2rayN / v2rayNG exports.</string>
     <string name="plan_composite_protocol_unsupported">A selected protocol is not available in this bundle.</string>
     <string name="plan_ipv6_not_ready">IPv6 deployment is the next test gate. Select an IPv4 address for now.</string>
-    <string name="plan_address_limit_not_ready">This debug gate supports at most one IPv4 and one IPv6 address. Extra addresses are not verified yet.</string>
+    <string name="plan_address_limit_not_ready">This version supports at most one IPv4 and one IPv6 address per deployment. Extra addresses are not supported yet.</string>
     <string name="plan_new_task_title">Start a new task?</string>
     <string name="plan_new_task_warning">After confirmation, the old local task will no longer be available to resume. Existing VPS nodes and logs will not be deleted. If the old task has not succeeded, unarchived configuration and logs may be unrecoverable. The new task will still check for address, protocol, and port conflicts.</string>
     <string name="plan_start_failed">Could not start the new task. Please try again. The old task record was not cleared.</string>
@@ -261,7 +261,7 @@
     <string name="plan_port">TCP/UDP port</string>
     <string name="plan_write_warning">Confirming will upload a verified script package, install sing-box 1.14.2 and open the selected proxy port. After deployment, OwnBridge will open another available port for the Clash subscription link. SSH and other services are left unchanged.</string>
     <string name="plan_resume_warning">OwnBridge will recheck the saved run ID, package hash and remote step journal. Completed steps will not be repeated; uncertain steps will be checked or retried using the same credential.</string>
-    <string name="plan_composite_write_warning">Experimental test build: confirming uploads a verified package, installs sing-box 1.14.2 and creates a service for each selected protocol. After deployment, OwnBridge will open another available port for the Clash subscription link. Existing services remain unchanged.</string>
+    <string name="plan_composite_write_warning">Confirming uploads a verified package, installs sing-box 1.14.2 and creates a service for each selected protocol. After deployment, OwnBridge will open another available port for the Clash subscription link. Existing services remain unchanged.</string>
     <string name="plan_composite_resume_warning">OwnBridge first checks the remote journal. A completed task is read only; an incomplete task can retry only with its original bundle version. A newer bundle never overwrites the old one.</string>
     <string name="plan_confirmation_title">Confirm plan</string>
     <string name="plan_resume_title">Resume the saved deployment</string>

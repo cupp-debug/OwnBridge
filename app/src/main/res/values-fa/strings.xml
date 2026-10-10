@@ -82,7 +82,7 @@
     <string name="settings_about_data_title">داده‌های این دستگاه</string>
     <string name="settings_about_data">برنامه هرگز رمز عبور SSH شما را ذخیره نمی‌کند. نتایج استقرار موفق به‌طور خودکار وارد تاریخچه محلی رمزگذاری‌شده می‌شوند؛ همچنین می‌توانید فایل پیکربندی را خودتان صادر کنید.</string>
     <string name="settings_about_open_source_title">متن‌باز و اعتبارها</string>
-    <string name="settings_about_open_source">این یک پیش‌نمایش توسعه است. مخزن عمومی کد OwnBridge و مجوز انتشار هنوز در دسترس نیستند.</string>
+    <string name="settings_about_open_source">کد منبع OwnBridge با مجوز GPL-3.0-only منتشر شده است. برای بررسی کد یا گزارش مشکل، مخزن زیر را باز کنید.</string>
     <string name="settings_about_third_party">OwnBridge از پروژه‌های مستقل زیر استفاده می‌کند. برای رفتن به صفحه پروژه اصلی روی نام آن بزنید؛ فهرست شدن به معنی تأیید یا حمایت نیست.</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · آزمایش محلی گره‌ها</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · پل Android</string>
@@ -251,7 +251,7 @@
     <string name="plan_composite_client_only">این نسخه از خروجی Clash / Mihomo و v2rayN / v2rayNG پشتیبانی می‌کند.</string>
     <string name="plan_composite_protocol_unsupported">یکی از پروتکل‌های انتخاب‌شده در این بسته موجود نیست.</string>
     <string name="plan_ipv6_not_ready">استقرار IPv6 مرحله بعدی آزمون است. فعلاً یک نشانی IPv4 انتخاب کنید.</string>
-    <string name="plan_address_limit_not_ready">این مرحله اشکال‌زدایی حداکثر یک نشانی IPv4 و یک IPv6 را پشتیبانی می‌کند. نشانی‌های اضافی هنوز تأیید نشده‌اند.</string>
+    <string name="plan_address_limit_not_ready">این نسخه در هر استقرار حداکثر از یک نشانی IPv4 و یک IPv6 پشتیبانی می‌کند. نشانی‌های اضافی هنوز پشتیبانی نمی‌شوند.</string>
     <string name="plan_new_task_title">وظیفه جدید شروع شود؟</string>
     <string name="plan_new_task_warning">پس از تأیید، وظیفه محلی قبلی دیگر برای ادامه در دسترس نخواهد بود. گره‌ها و گزارش‌های موجود روی VPS حذف نمی‌شوند. اگر وظیفه قبلی موفق نشده باشد، ممکن است پیکربندی و گزارش‌های بایگانی‌نشده قابل بازیابی نباشند. وظیفه جدید همچنان تداخل نشانی، پروتکل و پورت را بررسی می‌کند.</string>
     <string name="plan_start_failed">وظیفه جدید شروع نشد. دوباره تلاش کنید. رکورد وظیفه قبلی پاک نشده است.</string>
@@ -262,7 +262,7 @@
     <string name="plan_port">پورت TCP/UDP</string>
     <string name="plan_write_warning">با تأیید، یک بسته اسکریپت تأییدشده بارگذاری می‌شود، sing-box 1.14.2 نصب و پورت پراکسی انتخاب‌شده باز می‌شود. پس از استقرار، OwnBridge یک پورت آزاد دیگر برای لینک اشتراک Clash باز می‌کند. SSH و سایر سرویس‌ها بدون تغییر می‌مانند.</string>
     <string name="plan_resume_warning">OwnBridge شناسه اجرای ذخیره‌شده، هش بسته و گزارش گام‌های راه دور را دوباره بررسی می‌کند. گام‌های تکمیل‌شده تکرار نمی‌شوند؛ گام‌های با وضعیت نامطمئن با همان اطلاعات ورود بررسی یا دوباره اجرا می‌شوند.</string>
-    <string name="plan_composite_write_warning">نسخه آزمایشی تجربی: با تأیید، بسته تأییدشده بارگذاری، sing-box 1.14.2 نصب و برای هر پروتکل انتخاب‌شده یک سرویس ساخته می‌شود. پس از استقرار، OwnBridge یک پورت آزاد دیگر برای لینک اشتراک Clash باز می‌کند. سرویس‌های موجود بدون تغییر می‌مانند.</string>
+    <string name="plan_composite_write_warning">با تأیید، بسته تأییدشده بارگذاری، sing-box 1.14.2 نصب و برای هر پروتکل انتخاب‌شده یک سرویس ساخته می‌شود. پس از استقرار، OwnBridge یک پورت آزاد دیگر برای لینک اشتراک Clash باز می‌کند. سرویس‌های موجود بدون تغییر می‌مانند.</string>
     <string name="plan_composite_resume_warning">OwnBridge ابتدا گزارش راه دور را بررسی می‌کند. یک وظیفه تکمیل‌شده فقط خواندنی است؛ وظیفه ناقص فقط با نسخه اصلی بسته خود دوباره قابل اجراست. بسته جدیدتر هرگز روی بسته قبلی نوشته نمی‌شود.</string>
     <string name="plan_confirmation_title">تأیید برنامه</string>
     <string name="plan_resume_title">ادامه استقرار ذخیره‌شده</string>

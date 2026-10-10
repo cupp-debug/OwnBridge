@@ -43,6 +43,15 @@ internal fun SettingsAboutPage() {
         SectionTitle(stringResource(R.string.settings_about_open_source_title))
         Text(stringResource(R.string.settings_about_open_source),
             style = MaterialTheme.typography.bodyMedium)
+        TextButton(
+            onClick = {
+                linkFailed = runCatching { uriHandler.openUri(OWNBRIDGE_REPOSITORY_URL) }.isFailure
+            },
+            modifier = Modifier.fillMaxWidth(),
+        ) {
+            InlineIconText(OWNBRIDGE_REPOSITORY_URL.removePrefix("https://"), IconAsset.GitHub,
+                style = MaterialTheme.typography.bodyMedium)
+        }
         Text(stringResource(R.string.settings_about_third_party),
             style = MaterialTheme.typography.bodyMedium)
         thirdPartyLinks.forEach { link ->
@@ -59,6 +68,8 @@ internal fun SettingsAboutPage() {
 }
 
 private data class ThirdPartyLink(@StringRes val titleRes: Int, val url: String)
+
+private const val OWNBRIDGE_REPOSITORY_URL = "https://github.com/cupp-debug/OwnBridge"
 
 private val thirdPartyLinks = listOf(
     ThirdPartyLink(R.string.settings_about_mihomo, "https://github.com/MetaCubeX/mihomo"),

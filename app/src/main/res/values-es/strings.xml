@@ -82,7 +82,7 @@
     <string name="settings_about_data_title">Datos en este dispositivo</string>
     <string name="settings_about_data">La app nunca guarda tu contraseña SSH. Los resultados de despliegues correctos se guardan automáticamente en un historial local cifrado; también puedes exportar el archivo de configuración por tu cuenta.</string>
     <string name="settings_about_open_source_title">Código abierto y créditos</string>
-    <string name="settings_about_open_source">Esta es una versión preliminar de desarrollo. Aún no hay disponible un repositorio público del código fuente de OwnBridge ni una licencia de publicación.</string>
+    <string name="settings_about_open_source">El código fuente de OwnBridge se publica bajo GPL-3.0-only. Abre el repositorio para revisar el código o informar de un problema.</string>
     <string name="settings_about_third_party">OwnBridge utiliza los siguientes proyectos independientes. Toca un nombre para visitar su página original; incluirlos aquí no implica respaldo.</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · pruebas locales de nodos</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · puente para Android</string>
@@ -251,7 +251,7 @@
     <string name="plan_composite_client_only">Esta compilación admite exportaciones para Clash / Mihomo y v2rayN / v2rayNG.</string>
     <string name="plan_composite_protocol_unsupported">Uno de los protocolos seleccionados no está disponible en este paquete.</string>
     <string name="plan_ipv6_not_ready">El despliegue IPv6 es la siguiente fase de pruebas. Por ahora selecciona una dirección IPv4.</string>
-    <string name="plan_address_limit_not_ready">Esta fase de depuración admite como máximo una dirección IPv4 y una IPv6. Las direcciones adicionales aún no están verificadas.</string>
+    <string name="plan_address_limit_not_ready">Esta versión admite como máximo una dirección IPv4 y una IPv6 por despliegue. Aún no se admiten direcciones adicionales.</string>
     <string name="plan_new_task_title">¿Iniciar una tarea nueva?</string>
     <string name="plan_new_task_warning">Tras confirmar, la tarea local anterior dejará de estar disponible para reanudarla. Los nodos y registros existentes en el VPS no se eliminarán. Si la tarea anterior no terminó correctamente, la configuración y los registros no archivados podrían no poder recuperarse. La nueva tarea seguirá comprobando conflictos de dirección, protocolo y puerto.</string>
     <string name="plan_start_failed">No se pudo iniciar la tarea nueva. Inténtalo de nuevo. El registro de la tarea anterior no se borró.</string>
@@ -262,7 +262,7 @@
     <string name="plan_port">Puerto TCP/UDP</string>
     <string name="plan_write_warning">Al confirmar se cargará un paquete de scripts verificado, se instalará sing-box 1.14.2 y se abrirá el puerto proxy seleccionado. Tras el despliegue, OwnBridge abrirá otro puerto disponible para el enlace de suscripción de Clash. SSH y los demás servicios no se modificarán.</string>
     <string name="plan_resume_warning">OwnBridge volverá a comprobar el ID de ejecución guardado, el hash del paquete y el diario remoto de pasos. Los pasos completados no se repetirán; los pasos con estado incierto se comprobarán o reintentarán usando la misma credencial.</string>
-    <string name="plan_composite_write_warning">Compilación de prueba experimental: al confirmar se carga un paquete verificado, se instala sing-box 1.14.2 y se crea un servicio para cada protocolo seleccionado. Tras el despliegue, OwnBridge abrirá otro puerto disponible para el enlace de suscripción de Clash. Los servicios existentes no se modificarán.</string>
+    <string name="plan_composite_write_warning">Al confirmar se carga un paquete verificado, se instala sing-box 1.14.2 y se crea un servicio para cada protocolo seleccionado. Tras el despliegue, OwnBridge abrirá otro puerto disponible para el enlace de suscripción de Clash. Los servicios existentes no se modificarán.</string>
     <string name="plan_composite_resume_warning">OwnBridge comprueba primero el diario remoto. Una tarea completada se consulta en modo de solo lectura; una tarea incompleta solo puede reintentarse con su versión original del paquete. Un paquete más reciente nunca sobrescribe el anterior.</string>
     <string name="plan_confirmation_title">Confirmar plan</string>
     <string name="plan_resume_title">Reanudar el despliegue guardado</string>

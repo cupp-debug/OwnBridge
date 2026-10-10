@@ -82,7 +82,7 @@
     <string name="settings_about_data_title">此裝置上的資料</string>
     <string name="settings_about_data">應用程式不儲存 SSH 密碼。部署成功後，結果會自動加密存入本地歷史；你也可以自行匯出設定檔。</string>
     <string name="settings_about_open_source_title">開源與致謝</string>
-    <string name="settings_about_open_source">目前是開發預覽版；OwnBridge 的公開原始碼儲存庫與發布授權尚未確定。</string>
+    <string name="settings_about_open_source">OwnBridge 原始碼以 GPL-3.0-only 授權公開。點選下方儲存庫位址可檢視程式碼或回報問題。</string>
     <string name="settings_about_third_party">OwnBridge 使用以下獨立專案。點選名稱可開啟上游頁面；列出它們不代表獲得官方認可。</string>
     <string name="settings_about_mihomo">Mihomo · GPL-3.0 · 本地節點測試</string>
     <string name="settings_about_mihomo_bridge">libmihomo-android · GPL-3.0 · Android 橋接</string>
@@ -251,7 +251,7 @@
     <string name="plan_composite_client_only">目前支援 Clash / Mihomo 和 v2rayN / v2rayNG 匯出。</string>
     <string name="plan_composite_protocol_unsupported">所選協定有尚未包含在此步驟套件中的專案。</string>
     <string name="plan_ipv6_not_ready">IPv6 部署屬於下一階段驗收；目前請先選擇 IPv4 位址。</string>
-    <string name="plan_address_limit_not_ready">目前調試版最多支援一枚 IPv4 和一枚 IPv6；更多位址尚未驗證。</string>
+    <string name="plan_address_limit_not_ready">目前版本每次部署最多支援一枚 IPv4 和一枚 IPv6；暫不支援更多位址。</string>
     <string name="plan_new_task_title">開始新任務？</string>
     <string name="plan_new_task_warning">確認後，本地舊任務將退出續跑入口；VPS 上已有節點和日誌不會刪除。若舊任務尚未成功，未歸檔的設定與日誌可能無法找回。新任務仍會檢查位址、協定和連接埠衝突。</string>
     <string name="plan_start_failed">無法啟動新任務，請重試。舊任務記錄未被清除。</string>
@@ -262,7 +262,7 @@
     <string name="plan_port">TCP/UDP 連接埠</string>
     <string name="plan_write_warning">確認後將上傳並驗證步驟套件、安裝 sing-box 1.14.2，並開放所選代理連接埠。部署完成後，OwnBridge 會另開一個可用連接埠提供 Clash 訂閱連結。SSH 與其他服務不會被修改。</string>
     <string name="plan_resume_warning">OwnBridge 將核對已儲存的任務 ID、步驟套件摘要和遠端步驟記錄。已完成的步驟不重複執行；狀態不明的步驟會在同一認證資訊下核查或重試。</string>
-    <string name="plan_composite_write_warning">實驗性測試版本：確認後將上傳並驗證步驟套件、安裝 sing-box 1.14.2，並為每個所選協定建立服務。部署完成後，OwnBridge 會另開一個可用連接埠提供 Clash 訂閱連結。現有服務維持不變。</string>
+    <string name="plan_composite_write_warning">確認後將上傳並驗證步驟套件、安裝 sing-box 1.14.2，並為每個所選協定建立服務。部署完成後，OwnBridge 會另開一個可用連接埠提供 Clash 訂閱連結。現有服務維持不變。</string>
     <string name="plan_composite_resume_warning">OwnBridge 會先核對遠端步驟記錄。已完成任務只讀恢復；未完成任務僅能用原版本步驟套件重試，新版不會覆蓋舊套件。</string>
     <string name="plan_confirmation_title">確認方案</string>
     <string name="plan_resume_title">恢復已儲存的部署任務</string>

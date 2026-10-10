@@ -10,11 +10,11 @@ OwnBridge 是一款在 Android 手機上使用的本機部署工具。準備一�
 
 **你的伺服器，你的節點。手機上幾步，從部署到交付。**
 
-**[⬇ 下載 Android 預覽版 APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**[⬇ 下載 Android APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
 
 ## 目前狀態
 
-這是早期預覽版，尚非可直接用於正式環境的服務。OwnBridge 不是 VPN 服務供應商，也不提供伺服器或帳號。非偵錯 APK 開放了 SS、VLESS Reality 與 Hysteria 2 的組合部署流程；穩定正式版的可寫入部署範圍仍較窄。不同 VPS、網路與客戶端組合尚未全部驗證。APK 以 GitHub Release 附件提供，不提交到原始碼儲存庫。
+v0.1.0 是首個非預覽版 Android 發行套件。OwnBridge 不是 VPN 服務供應商，也不提供伺服器或帳號。不可偵錯的 APK 支援 SS、VLESS Reality 與 Hysteria 2 的組合部署。不同 VPS、網路與客戶端組合尚未全部驗證；如遇問題，歡迎透過 GitHub Issues 回報。APK 以 GitHub Release 附件提供，不提交到原始碼儲存庫。
 
 ## 功能
 
@@ -30,7 +30,7 @@ OwnBridge 是一款在 Android 手機上使用的本機部署工具。準備一�
 - 你有權管理、可用 root SSH 登入的 Ubuntu 22.04、24.04 或 26.04 x86_64 VPS；實際組合仍受目前版本功能限制。
 - 建置需要 JDK 21 與 Android SDK API 36。
 
-本機開發時，Windows 執行 `./gradlew.bat :app:assembleDebug`；macOS 或 Linux 執行 `./gradlew :app:assembleDebug`。公開預覽版須另外建置為不可偵錯的 APK 並以發行金鑰簽署，詳見[建置與簽署說明](BUILDING.md)。建置時會下載固定版本的 Mihomo Android 橋接程式並驗證 SHA-256；VPS 部署會從上游下載固定版本的 sing-box 並驗證摘要。
+本機開發時，Windows 執行 `./gradlew.bat :app:assembleDebug`；macOS 或 Linux 執行 `./gradlew :app:assembleDebug`。公開發行套件須另外建置為不可偵錯的 APK 並以發行金鑰簽署，詳見[建置與簽署說明](BUILDING.md)。建置時會下載固定版本的 Mihomo Android 橋接程式並驗證 SHA-256；VPS 部署會從上游下載固定版本的 sing-box 並驗證摘要。
 
 ## 安全說明
 

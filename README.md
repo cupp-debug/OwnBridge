@@ -10,11 +10,11 @@ Once complete, you can request a Clash/Mihomo subscription URL and get node link
 
 **Your server. Your nodes. From setup to delivery in just a few taps.**
 
-**[⬇ Download Android preview APK (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0-preview.1/OwnBridge-v0.1.0-preview.1-arm64.apk)**
+**[⬇ Download Android APK (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
 
 ## Current status
 
-This is an early preview, not a production-ready service. OwnBridge is not a VPN provider and does not supply servers or accounts. The non-debuggable preview APK exposes the composite SS, VLESS Reality, and Hysteria 2 deployment path; the stable release build still has a narrower writable gate. Do not assume every combination of VPS, network, and client has been validated. The APK is a GitHub Release asset, not a file committed to this repository.
+v0.1.0 is the first non-preview Android release. OwnBridge is not a VPN provider and does not supply servers or accounts. The non-debuggable APK includes the SS, VLESS Reality, and Hysteria 2 deployment path. Not every VPS, network, or client combination has been validated; please report problems through GitHub Issues. The APK is a GitHub Release asset, not a file committed to this repository.
 
 ## What it does
 
@@ -30,7 +30,7 @@ This is an early preview, not a production-ready service. OwnBridge is not a VPN
 - A VPS you are authorized to administer, running Ubuntu 22.04, 24.04, or 26.04 x86_64 with root SSH access. The supported combinations remain subject to the build's current feature gates.
 - JDK 21 and an Android SDK with API 36 to build the app.
 
-For local development, run `./gradlew.bat :app:assembleDebug` on Windows or `./gradlew :app:assembleDebug` on macOS/Linux. The public preview APK is built separately without Android debugging and signed for release. See the [build and signing guide](docs/BUILDING.md). The build downloads a pinned Mihomo Android bridge and checks its SHA-256 digest. VPS deployment downloads a pinned sing-box release from upstream and verifies its digest.
+For local development, run `./gradlew.bat :app:assembleDebug` on Windows or `./gradlew :app:assembleDebug` on macOS/Linux. The public APK is built separately without Android debugging and signed for release. See the [build and signing guide](docs/BUILDING.md). The build downloads a pinned Mihomo Android bridge and checks its SHA-256 digest. VPS deployment downloads a pinned sing-box release from upstream and verifies its digest.
 
 ## Security notes
 
