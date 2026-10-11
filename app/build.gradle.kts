@@ -18,7 +18,7 @@ android {
         applicationId = "app.ownbridge"
         minSdk = 26
         targetSdk = 36
-        versionCode = 3
+        versionCode = 4
         versionName = "0.1.1"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

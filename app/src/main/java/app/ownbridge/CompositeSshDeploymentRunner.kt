@@ -82,17 +82,20 @@ internal class CompositeSshDeploymentRunner {
             transport.connect()
             finish(CompositeRunEventStatus.PASSED, transport.observedFingerprint)
 
-            // Finished tasks retain their original runner. Only the recognized, unstarted
-            // public CRLF bundle can be restored before its status is read.
+            // Finished tasks retain their original runner. Recognized CRLF or failed-UFW
+            // preflight bundles can be restored before any protocol work has started.
             if (resumeExisting) {
                 val statusCommand = "sh $directory/package/runner.sh status $runId"
                 val recovery = CompositeBundleLfRecovery(transport, catalog)
                 val repaired = if (recovery.required(directory)) {
                     publish(CompositeRunEvent(CompositeRunAction.PACKAGE, null,
-                        "Restore LF-only deployment package", null, CompositeRunEventStatus.RUNNING))
+                        "Restore compatible deployment package", null, CompositeRunEventStatus.RUNNING))
                     finish(CompositeRunEventStatus.PASSED, recovery.repair(directory, archive))
                     true
                 } else false
+                val compatibleBundle = repaired || !oldBundleVersion || transport.checked(
+                    "if test -f $directory/bundle.zip; then sha256sum $directory/bundle.zip; fi",
+                ).text.substringBefore(' ') == archive.sha256
                 val hasRemoteRunner = transport.checked(
                     "if test -f $directory/package/runner.sh && test -f $directory/plan.txt " +
                         "&& test -f $directory/plan.sha256; then printf yes; else printf no; fi",
@@ -114,14 +117,14 @@ internal class CompositeSshDeploymentRunner {
                         return@withContext CompositeRunResult(oldJournal, oldExports.nodes,
                             events.toList(), null)
                     }
-                    if (oldBundleVersion && !repaired) {
+                    if (!compatibleBundle) {
                         finish(CompositeRunEventStatus.FAILED,
                             "Previous bundle is incomplete; no files or services were changed")
                         return@withContext CompositeRunResult(oldJournal, emptyList(), events.toList(),
                             CompositeRunFailure.HASH_MISMATCH)
                     }
                     finish(CompositeRunEventStatus.PASSED, "Existing run is incomplete; checking its package")
-                } else if (oldBundleVersion && !repaired) {
+                } else if (!compatibleBundle) {
                     return@withContext CompositeRunResult(null, emptyList(), events.toList(),
                         CompositeRunFailure.HASH_MISMATCH)
                 }

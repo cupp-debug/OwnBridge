@@ -16,6 +16,29 @@ SPEC.loader.exec_module(module)
 
 
 class PreflightTest(unittest.TestCase):
+    def test_minimal_ubuntu_without_ufw_passes_when_actual_dependencies_exist(self):
+        from unittest.mock import Mock
+
+        run_dir = Path("/test-run")
+        plan_path = Mock()
+        plan_path.read_bytes.return_value = b"plan"
+        nodes = ()
+        with patch.object(module.os, "geteuid", return_value=0, create=True), \
+                patch.object(module.platform, "machine", return_value="x86_64"), \
+                patch.object(module.Path, "read_text", return_value='ID=ubuntu\nVERSION_ID="24.04"\n'), \
+                patch.object(module.Path, "__truediv__", return_value=plan_path), \
+                patch.object(module, "parse_plan", return_value=nodes), \
+                patch.object(module.shutil, "which", side_effect=lambda name: None if name == "ufw" else name), \
+                patch.object(module, "assigned_global_scope_addresses", return_value=set()), \
+                patch.object(module, "check_assigned_addresses"), \
+                patch.object(module, "check_unit_ownership", return_value=set()), \
+                patch.object(module, "check_available_ports") as ports:
+            module.main(run_dir)
+            ports.assert_called_once_with(nodes, set())
+            with patch.object(module.shutil, "which", side_effect=lambda name: None if name == "curl" else name):
+                with self.assertRaisesRegex(SystemExit, "Missing required tools: curl"):
+                    module.main(run_dir)
+
     def test_preview_release_gate_accepts_ubuntu_2204_only_as_an_exact_version(self):
         for version in ("22.04", "24.04", "26.04"):
             with self.subTest(version=version):

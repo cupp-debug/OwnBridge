@@ -41,11 +41,11 @@ internal class CompositeDeploymentPackageCatalog(private val assets: AssetManage
     }
 
     companion object {
-        const val VERSION = "composite-v2-ubuntu22-lf"
+        const val VERSION = "composite-v2-ubuntu22-lf-ufw"
         val SUPPORTED_VERSIONS = setOf(
             "composite-v2-preview", "composite-v2-multi-run",
             "composite-v2-ubuntu24-preview", "composite-v2-ubuntu22-trial",
-            "composite-v2-ubuntu22", VERSION,
+            "composite-v2-ubuntu22", "composite-v2-ubuntu22-lf", VERSION,
         )
         val FILE_NAMES = listOf(
             "runner.sh", "plan.py", "preflight.py", "fetch.sh", "configure.py",

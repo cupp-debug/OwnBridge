@@ -1,4 +1,4 @@
-"""Restore the exact public CRLF bundle only before its first deployment stage."""
+"""Repair known CRLF or missing-UFW bundles before any protocol deployment starts."""
 
 import fcntl
 import hashlib
@@ -10,7 +10,14 @@ import tempfile
 import zipfile
 
 
-BROKEN_RUNNER_SHA256 = "1e12a477e89f5cb4fddacf9ffd418444a86d558a4cec85800c593ca01a441588"
+LEGACY_PREFLIGHT_SHA256 = {
+    "0f6c333a9511ef848e88922646052c9fa24b2bccf33cd205f674f69cf6c94c64",
+    "aabada5cce2c71b6862ac41a68820eaeb0799e7e69bee5d1ab0c92a76cee6dcb",
+}
+LEGACY_REQUIRED = b'"systemctl", "ufw", "flock"'
+FIXED_REQUIRED = b'"systemctl", "flock"'
+LEGACY_UFW = b"ufw_status=$(ufw status)\n"
+FIXED_UFW = b"ufw_status=\nif command -v ufw >/dev/null 2>&1; then\n    ufw_status=$(ufw status)\nfi\n"
 FILES = {
     "runner.sh", "plan.py", "preflight.py", "fetch.sh", "configure.py",
     "config_common.py", "ss.py", "vless.py", "hy2.py", "activate.sh",
@@ -46,6 +53,15 @@ def matches(directory: Path, files: dict[str, bytes]) -> bool:
     return all((directory / name).read_bytes() == data for name, data in files.items())
 
 
+def corrected(name: str, data: bytes) -> bytes:
+    data = data.replace(b"\r\n", b"\n")
+    if name == "preflight.py":
+        data = data.replace(LEGACY_REQUIRED, FIXED_REQUIRED, 1)
+    elif name == "activate.sh":
+        data = data.replace(LEGACY_UFW, FIXED_UFW, 1)
+    return data
+
+
 def recover(run_dir: Path, fixed_archive: Path, expected: str) -> str:
     if not re.fullmatch(r"[a-f0-9]{32}", run_dir.name) or run_dir.is_symlink():
         raise ValueError("Invalid run directory")
@@ -60,9 +76,9 @@ def recover(run_dir: Path, fixed_archive: Path, expected: str) -> str:
     with lock_path.open("a") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         archive = run_dir / "bundle.zip"
-        backup = run_dir / "bundle.crlf.zip"
+        backup = run_dir / "bundle.before.zip"
         package = run_dir / "package"
-        package_backup = run_dir / "package.crlf"
+        package_backup = run_dir / "package.before"
         if any(path.is_symlink() for path in (archive, backup, package, package_backup)):
             raise ValueError("Recovery paths must not be symbolic links")
         archive_hash = digest(archive) if archive.exists() else None
@@ -74,16 +90,18 @@ def recover(run_dir: Path, fixed_archive: Path, expected: str) -> str:
             original = contents(backup)
             original_hash = backup_hash
         else:
-            raise ValueError("Only the known public CRLF bundle can be repaired")
-        if hashlib.sha256(original["runner.sh"]).hexdigest() != BROKEN_RUNNER_SHA256:
-            raise ValueError("Only the known public CRLF bundle can be repaired")
+            raise ValueError("Only a known pre-deployment bundle can be repaired")
+        if hashlib.sha256(original["preflight.py"]).hexdigest() not in LEGACY_PREFLIGHT_SHA256:
+            raise ValueError("Only a known pre-deployment bundle can be repaired")
         if backup_hash not in (None, original_hash):
             raise ValueError("Unrecognized backup archive")
-        if any(original[name].replace(b"\r\n", b"\n") != fixed[name] for name in FILES):
-            raise ValueError("Recovery may only change line endings")
+        if any(corrected(name, original[name]) != fixed[name] for name in FILES):
+            raise ValueError("Recovery may only change line endings and optional UFW handling")
         if archive_hash == expected and matches(package, fixed):
-            return "LF deployment package already restored"
-        if any(any(run_dir.glob(f"*.{state}")) for state in ("running", "done", "failed")):
+            return "Deployment package already restored"
+        markers = (item for state in ("running", "done", "failed")
+                   for item in run_dir.glob(f"*.{state}"))
+        if any(item.name != "shared.preflight.failed" for item in markers):
             raise ValueError("Deployment stages already started; recovery refused")
         plan_hash = digest(run_dir / "plan.txt")
         if (run_dir / "plan.sha256").read_bytes() != f"{plan_hash}  plan.txt\n".encode("ascii"):
@@ -119,7 +137,7 @@ def recover(run_dir: Path, fixed_archive: Path, expected: str) -> str:
         finally:
             if prepared.exists():
                 shutil.rmtree(prepared)
-        return "Restored LF deployment package; original files preserved"
+        return "Restored supported deployment package; original files preserved"
 
 
 if __name__ == "__main__":

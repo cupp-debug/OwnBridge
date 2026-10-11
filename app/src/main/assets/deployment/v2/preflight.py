@@ -125,7 +125,7 @@ def main(run_dir: Path) -> None:
     if platform.machine() != "x86_64":
         raise SystemExit("Only x86_64 is tested for this bundle")
     nodes = parse_plan((run_dir / "plan.txt").read_bytes())
-    required = {"ip", "ss", "curl", "sha256sum", "tar", "systemctl", "ufw", "flock"}
+    required = {"ip", "ss", "curl", "sha256sum", "tar", "systemctl", "flock"}
     if any(node.protocol in ("vless", "hy2") for node in nodes):
         required.add("openssl")
     missing = sorted(tool for tool in required if not shutil.which(tool))

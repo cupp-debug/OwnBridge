@@ -58,7 +58,10 @@ systemctl enable "$unit_name"
 systemctl restart "$unit_name"
 systemctl is-active --quiet "$unit_name"
 
-ufw_status=$(ufw status)
+ufw_status=
+if command -v ufw >/dev/null 2>&1; then
+    ufw_status=$(ufw status)
+fi
 if printf '%s\n' "$ufw_status" | grep -q '^Status: active'; then
     node_lines=$(python3 "$package/plan.py" nodes "$run_dir/plan.txt" "$protocol")
     printf '%s\n' "$node_lines" |
