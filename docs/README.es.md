@@ -10,11 +10,11 @@ Al terminar, puedes solicitar una URL de suscripción para **Clash/Mihomo** y ob
 
 **Tu servidor. Tus nodos. Del despliegue a la entrega en unos pocos toques.**
 
-**[⬇ Descargar APK para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
+**[⬇ Descargar APK para Android (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.1/OwnBridge-v0.1.1-arm64.apk)**
 
 ## Estado actual
 
-v0.1.0 es la primera versión de Android que no es preliminar. OwnBridge no es un proveedor de VPN ni ofrece servidores o cuentas. El APK sin depuración admite el despliegue combinado de SS, VLESS Reality e Hysteria 2. No se han validado todas las combinaciones de VPS, red y cliente; puedes informar de problemas en GitHub Issues. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
+v0.1.1 es una actualización de mantenimiento que mejora la compatibilidad del despliegue en imágenes de Ubuntu para VPS. OwnBridge no es un proveedor de VPN ni ofrece servidores o cuentas. El APK sin depuración admite el despliegue combinado de SS, VLESS Reality e Hysteria 2. No se han validado todas las combinaciones de VPS, red y cliente; puedes informar de problemas en GitHub Issues. El APK se distribuye como archivo adjunto de GitHub Release, no dentro del repositorio.
 
 ## Funciones
 

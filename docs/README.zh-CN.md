@@ -10,11 +10,11 @@ OwnBridge 是一款在 Android 手机上使用的本地部署工具。准备一�
 
 **你的服务器，你的节点。手机上几步，部署到交付。**
 
-**[⬇ 下载 Android APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
+**[⬇ 下载 Android APK（arm64-v8a）](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.1/OwnBridge-v0.1.1-arm64.apk)**
 
 ## 当前状态
 
-v0.1.0 是首个非预览版 Android 发行包。OwnBridge 不是 VPN 服务商，不提供服务器或账户。不可调试的 APK 支持 SS、VLESS Reality 和 Hysteria 2 的组合部署。不同 VPS、网络和客户端组合尚未全部验证；遇到问题欢迎通过 GitHub Issues 反馈。APK 作为 GitHub Release 附件提供，不提交到源码仓库。
+v0.1.1 是正式维护版本，修复了 Ubuntu VPS 部署兼容性问题。OwnBridge 不是 VPN 服务商，不提供服务器或账户。不可调试的 APK 支持 SS、VLESS Reality 和 Hysteria 2 的组合部署。不同 VPS、网络和客户端组合尚未全部验证；遇到问题欢迎通过 GitHub Issues 反馈。APK 作为 GitHub Release 附件提供，不提交到源码仓库。
 
 ## 功能
 

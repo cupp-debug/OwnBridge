@@ -10,11 +10,11 @@ OwnBridge, Android için yerel bir kurulum aracıdır. Genel IPv4 adresi olan bi
 
 **Kendi sunucunuz. Kendi düğümleriniz. Birkaç dokunuşla kurulumdan teslimata.**
 
-**[⬇ Android APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.0/OwnBridge-v0.1.0-arm64.apk)**
+**[⬇ Android APK'sını indir (arm64-v8a)](https://github.com/cupp-debug/OwnBridge/releases/download/v0.1.1/OwnBridge-v0.1.1-arm64.apk)**
 
 ## Mevcut durum
 
-v0.1.0, Android uygulamasının ilk önizleme dışı sürümüdür. OwnBridge bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz. Hata ayıklama özelliği kapalı APK, SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasını destekler. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır; sorunları GitHub Issues üzerinden bildirebilirsiniz. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
+v0.1.1, Ubuntu VPS imajlarıyla kurulum uyumluluğunu iyileştiren bir bakım sürümüdür. OwnBridge bir VPN sağlayıcısı değildir; sunucu veya hesap sağlamaz. Hata ayıklama özelliği kapalı APK, SS, VLESS Reality ve Hysteria 2 protokollerinin birlikte kurulmasını destekler. Her VPS, ağ ve istemci birleşimi doğrulanmamıştır; sorunları GitHub Issues üzerinden bildirebilirsiniz. APK, depoya eklenmek yerine GitHub Release eki olarak sunulur.
 
 ## Özellikler
 
