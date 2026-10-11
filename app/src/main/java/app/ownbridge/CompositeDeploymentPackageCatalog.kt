@@ -17,6 +17,9 @@ internal class CompositeDeploymentPackageCatalog(private val assets: AssetManage
         },
     ).archive()
 
+    fun lfRecoveryScript(): ByteArray =
+        assets.open("deployment/repair/v1/repair.py").use { it.readBytes() }
+
     fun source(step: CompositeStep): String {
         val files = when (step) {
             is CompositeStep.Shared -> when (step.stage) {
@@ -38,10 +41,11 @@ internal class CompositeDeploymentPackageCatalog(private val assets: AssetManage
     }
 
     companion object {
-        const val VERSION = "composite-v2-ubuntu22"
+        const val VERSION = "composite-v2-ubuntu22-lf"
         val SUPPORTED_VERSIONS = setOf(
             "composite-v2-preview", "composite-v2-multi-run",
-            "composite-v2-ubuntu24-preview", "composite-v2-ubuntu22-trial", VERSION,
+            "composite-v2-ubuntu24-preview", "composite-v2-ubuntu22-trial",
+            "composite-v2-ubuntu22", VERSION,
         )
         val FILE_NAMES = listOf(
             "runner.sh", "plan.py", "preflight.py", "fetch.sh", "configure.py",

@@ -82,10 +82,17 @@ internal class CompositeSshDeploymentRunner {
             transport.connect()
             finish(CompositeRunEventStatus.PASSED, transport.observedFingerprint)
 
-            // An already-finished task can be reconciled with its original remote runner.
-            // This does not upload the newer APK bundle or restart any service.
+            // Finished tasks retain their original runner. Only the recognized, unstarted
+            // public CRLF bundle can be restored before its status is read.
             if (resumeExisting) {
                 val statusCommand = "sh $directory/package/runner.sh status $runId"
+                val recovery = CompositeBundleLfRecovery(transport, catalog)
+                val repaired = if (recovery.required(directory)) {
+                    publish(CompositeRunEvent(CompositeRunAction.PACKAGE, null,
+                        "Restore LF-only deployment package", null, CompositeRunEventStatus.RUNNING))
+                    finish(CompositeRunEventStatus.PASSED, recovery.repair(directory, archive))
+                    true
+                } else false
                 val hasRemoteRunner = transport.checked(
                     "if test -f $directory/package/runner.sh && test -f $directory/plan.txt " +
                         "&& test -f $directory/plan.sha256; then printf yes; else printf no; fi",
@@ -107,14 +114,14 @@ internal class CompositeSshDeploymentRunner {
                         return@withContext CompositeRunResult(oldJournal, oldExports.nodes,
                             events.toList(), null)
                     }
-                    if (oldBundleVersion) {
+                    if (oldBundleVersion && !repaired) {
                         finish(CompositeRunEventStatus.FAILED,
                             "Previous bundle is incomplete; no files or services were changed")
                         return@withContext CompositeRunResult(oldJournal, emptyList(), events.toList(),
                             CompositeRunFailure.HASH_MISMATCH)
                     }
                     finish(CompositeRunEventStatus.PASSED, "Existing run is incomplete; checking its package")
-                } else if (oldBundleVersion) {
+                } else if (oldBundleVersion && !repaired) {
                     return@withContext CompositeRunResult(null, emptyList(), events.toList(),
                         CompositeRunFailure.HASH_MISMATCH)
                 }
@@ -137,7 +144,10 @@ internal class CompositeSshDeploymentRunner {
             finish(CompositeRunEventStatus.PASSED)
 
             val statusCommand = "sh $directory/package/runner.sh status $runId"
+            publish(CompositeRunEvent(CompositeRunAction.EXPORT, null, statusCommand, null,
+                CompositeRunEventStatus.RUNNING))
             val initial = CompositeJournalParser.parse(transport.checked(statusCommand).text, plan)
+            finish(CompositeRunEventStatus.PASSED)
             suspend fun execute(step: CompositeStep): Boolean {
                 val command = "sh $directory/package/runner.sh ${step.wireName} $runId"
                 publish(CompositeRunEvent(CompositeRunAction.STEP, step, command, catalog.source(step),
@@ -209,7 +219,10 @@ internal class CompositeSshDeploymentRunner {
                 commandStarted = events.lastOrNull()?.action != CompositeRunAction.IDENTITY,
             )
             if (events.lastOrNull()?.status == CompositeRunEventStatus.RUNNING) {
-                finish(CompositeRunEventStatus.FAILED)
+                val detail = (error as? RemoteCommandFailed)?.let {
+                    "Exit ${it.code}: ${sanitize(it.output, password)}"
+                }
+                finish(CompositeRunEventStatus.FAILED, detail)
             }
             // An APK update must not overwrite an immutable remote bundle. Its old runner can
             // still report whether any protocol work started, allowing a safe new task.

@@ -16,6 +16,8 @@ Set `JAVA_HOME` to JDK 21 and `ANDROID_HOME` to the Android SDK. Use the include
 
 On Windows, use `gradlew.bat` in place of `./gradlew`. The debug APK is signed with a local Android debug key, has application ID `app.ownbridge.dev`, and must not be redistributed as the public release. The `release` build has application ID `app.ownbridge`, enables the tested composite deployment path, and is **not debuggable**. It is unsigned by default. Its output is under `app/build/outputs/apk/release/` and must be signed with a private release key before installation or distribution. Do not commit a keystore or its password.
 
+Remote deployment and subscription assets must use LF line endings, including Windows checkouts. `.gitattributes` enforces this, and every APK build runs `:app:verifyRemoteScriptLineEndings` before packaging. That check rejects CRLF assets instead of producing an APK with scripts that cannot run on Linux. Do not disable it when preparing a release.
+
 For a self-signed release, first align the unsigned APK with Android SDK `zipalign`, then sign it with `apksigner` and verify it with `apksigner verify --verbose --print-certs`. Keep the signing key and password securely: future updates of the same Android application ID must use the same key and a higher `versionCode`.
 
 ## Pinned components and corresponding source

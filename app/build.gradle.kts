@@ -18,8 +18,8 @@ android {
         applicationId = "app.ownbridge"
         minSdk = 26
         targetSdk = 36
-        versionCode = 2
-        versionName = "0.1.0"
+        versionCode = 3
+        versionName = "0.1.1"
         ndk { abiFilters += "arm64-v8a" }
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -56,6 +56,23 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 }
+
+val remoteScripts = fileTree("src/main/assets") {
+    include("deployment/**/*.sh", "deployment/**/*.py", "deployment/**/*.service", "deployment/**/*.txt")
+    include("subscription/**/*.py")
+}
+val verifyRemoteScriptLineEndings = tasks.register("verifyRemoteScriptLineEndings") {
+    inputs.files(remoteScripts)
+    doLast {
+        remoteScripts.files.forEach { file ->
+            val bytes = file.readBytes()
+            check(bytes.isNotEmpty() && bytes.last() == 10.toByte() && 13.toByte() !in bytes) {
+                "Remote asset must use LF line endings and end with a newline: ${file.relativeTo(projectDir)}"
+            }
+        }
+    }
+}
+tasks.named("preBuild") { dependsOn(verifyRemoteScriptLineEndings) }
 
 // Pinned GPL-3.0 Android bridge, including Mihomo v1.19.31. Never accept a changed binary silently.
 val mihomoAarName = "libmihomo-android-v0.3.5.aar"
